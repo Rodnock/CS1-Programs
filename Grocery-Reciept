@@ -49,12 +49,13 @@ public class Groceries {
                actualPrice = price - salePrice;
                totalPrice = totalPrice + actualPrice;
                
-               reciept = reciept + item + ": $" + price + "   SALE: $" + actualPrice + "\n";
+               reciept = reciept + item + ": $" + String.format("%.02f", price) + 
+               "   SALE: $" + String.format("%.02f", actualPrice) + "\n";
             }
             else{
                totalPrice = totalPrice + price;
                
-               reciept = reciept + item + ": $" + price + "\n";
+               reciept = reciept + item + ": $" + String.format("%.02f", price) + "\n";
             }
          
          System.out.println();         
@@ -72,15 +73,17 @@ public class Groceries {
       }
       
       totalTax = totalPrice * tax;
-      finalPrice = totalTax + totalPrice;
+      finalPrice = totalTax + totalPrice; 
+      
       
       System.out.println();
       System.out.println("Grocery Bill");
       System.out.println();
       System.out.println(reciept);
-      System.out.println("Total price of items purchased: $" + totalPrice);
-      System.out.println("Tax (7%): $" + totalTax);   
-      System.out.println("Total price with tax: $" + finalPrice);
+      System.out.println("Total price of items purchased: $" + 
+                         String.format("%.02f", totalPrice));
+      System.out.println("Tax (7%): $" + String.format("%.02f", totalTax));   
+      System.out.println("Total price with tax: $" + String.format("%.02f", finalPrice));
    }
    
 }
