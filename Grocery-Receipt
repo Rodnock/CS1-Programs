@@ -1,5 +1,5 @@
-// ---
-// Description: This program tracks grocery items, prices, and if the item is on sale. Then it outputs a reciept.
+// 
+// Description: This program tracks grocery items, prices, and if the item is on sale. Then it outputs a receipt.
 // ---
 
 import java.util.Scanner;
@@ -20,7 +20,7 @@ public class Groceries {
    double finalPrice = 0;
    double tax = .07;
    double totalTax = 0;
-   String reciept = new String ("Purchases: \n");
+   String receipt = new String ("Purchases: \n");
    
    System.out.print("Input grocery items? (y/n): ");
    answer = keyboard.nextLine();
@@ -49,13 +49,13 @@ public class Groceries {
                actualPrice = price - salePrice;
                totalPrice = totalPrice + actualPrice;
                
-               reciept = reciept + item + ": $" + String.format("%.02f", price) + 
+               receipt = receipt + item + ": $" + String.format("%.02f", price) + 
                "   SALE: $" + String.format("%.02f", actualPrice) + "\n";
             }
             else{
                totalPrice = totalPrice + price;
                
-               reciept = reciept + item + ": $" + String.format("%.02f", price) + "\n";
+               receipt = receipt + item + ": $" + String.format("%.02f", price) + "\n";
             }
          
          System.out.println();         
@@ -79,7 +79,7 @@ public class Groceries {
       System.out.println();
       System.out.println("Grocery Bill");
       System.out.println();
-      System.out.println(reciept);
+      System.out.println(receipt);
       System.out.println("Total price of items purchased: $" + 
                          String.format("%.02f", totalPrice));
       System.out.println("Tax (7%): $" + String.format("%.02f", totalTax));   
